@@ -10,6 +10,7 @@ namespace W3Projects
 {
     public partial class MainPage : ContentPage
     {
+
         int num1, num2;
         string op;
         public MainPage()
@@ -20,20 +21,14 @@ namespace W3Projects
         public void Clear_Clicked(object sender, EventArgs e)
         {
             number.Text = "";
-           // selected_qty.Text = "0";
-            //selected_price.Text = "0";
+          
         }
         public void Number_Clicked(object sender, EventArgs e)
         {
             Button digit = (Button)sender;
             double num = Double.Parse(digit.Text);
             number.Text = number.Text + ((Button)sender).Text;
-            //if (Double.Parse(selected_qty.Text) < 999)
-            //    selected_qty.Text = (Double.Parse(selected_qty.Text) * 10 + num).ToString();
-
-            //if (selectedItem != null)
-            //    selected_price.Text = (selectedItem.price * Double.Parse(selected_qty.Text)).ToString();
-        }
+           }
 
         void Button_Clicked(System.Object sender, System.EventArgs e)
         {
