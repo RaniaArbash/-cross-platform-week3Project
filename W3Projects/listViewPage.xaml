@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="W3Projects.listViewPage">
+
+    <StackLayout>
+      
+    <ListView x:Name="mylist" HasUnevenRows="True" ItemSelected="mylist_ItemSelected">
+          <ListView.ItemTemplate>
+              <DataTemplate>
+                  <!--<ImageCell Text="{Binding name}" Detail="{Binding number}" ImageSource="{Binding image}" TextColor="Black" DetailColor="Aqua"/>-->
+
+                  <!--<ViewCell >
+
+                      <StackLayout Orientation="Horizontal" Padding="4">
+                          <Image Source="{Binding image}"/>
+                            <StackLayout HorizontalOptions="StartAndExpand">
+                                <Label Text="{Binding name}"/>
+                                <Label Text="{Binding number}"/>
+                            </StackLayout>
+                          <Button Text="Call" Clicked="Button_Clicked"/>
+                      </StackLayout>
+                  </ViewCell>-->
+
+                  <TextCell Text="{Binding name}" Detail="{Binding number}" TextColor="Black" DetailColor="Aqua">
+                      <TextCell.ContextActions>
+                          <MenuItem Text="Call" Clicked="Call_Clicked" CommandParameter="{Binding .}"/>
+                         <MenuItem Text="Delete" IsDestructive="True"  CommandParameter="{Binding .}" Clicked="Delete_Clicked"/>
+
+                      </TextCell.ContextActions>
+                  </TextCell>
+                  
+
+              </DataTemplate>
+
+
+          </ListView.ItemTemplate>
+
+
+      </ListView>
+
+      </StackLayout>
+  
+</ContentPage>
